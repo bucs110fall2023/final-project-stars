@@ -53,7 +53,8 @@ class GameController:
                 elif event.key == pygame.K_DOWN:
                     self.game_board.down()
                     moved = True 
-                elif event.key == pygame.K_q:  #ends the game 
+                elif event.key == pygame.K_q: #ends the game
+                    self.gameoverloop() 
                     return  
                 
         if moved:
@@ -66,9 +67,8 @@ class GameController:
         pygame.time.wait(100)  
 
   def gameoverloop(self):
+    self.game_board.check_and_update_high_score()
     self.game_board_view.draw_game_over() 
+    self.game_board_view.draw_high_score()  
     pygame.time.wait(3000)
-
     
-
-      

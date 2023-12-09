@@ -10,7 +10,6 @@ class GameBoardView:
             0: pygame.Color('lightgrey'),
             2: pygame.Color('yellow'),
             4: pygame.Color('gold'),
-            #colors for other numbers 
         }
         pygame.init()
         self.screen = pygame.display.set_mode(self.size)
@@ -41,4 +40,11 @@ class GameBoardView:
         text = font.render("Game Over!!!", True, ('red'))
         text_rect = text.get_rect(center=(self.size[0] / 2, self.size[1] / 2))
         self.screen.blit(text, text_rect)
+        pygame.display.flip()
+
+    def draw_high_score(self):
+        high_score_font = pygame.font.Font(None, 36)
+        high_score_text = high_score_font.render(f'High Score: {self.game_board.high_score}', True, pygame.Color('white'))
+        text_rect = high_score_text.get_rect(center=(self.size[0] / 2, self.size[1] - 50))  
+        self.screen.blit(high_score_text, text_rect)
         pygame.display.flip()

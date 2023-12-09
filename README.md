@@ -34,9 +34,7 @@ We will create 2048 game for final project. First, we will design an interface f
 ### Classes
 GameController
 GameBoardView
-BoxView 
 GameBoard 
-Box
 
 ## ATP
 
